@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operativa HYLDA - Atresmedia Publicidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --brand-orange: #f35d00;
+            --brand-purple: #2c1a4d;
+            --fw-red: #e61e25;
+            --light-gray: #f9fafb;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Contenedor de Diapositivas */
+        .presentation-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            padding: 20px;
+        }
+
+        .slide {
+            background: var(--bg-color);
+            min-height: 700px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            padding: 60px;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Cabecera con Logos */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logos-container {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        /* Marcadores de Imagen / Logos */
+        .image-placeholder-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f3f4f6;
+            border: 2px dashed #cbd5e1;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .image-placeholder-graphic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f1f5f9;
+            border: 2px dashed #94a3b8;
+            color: var(--brand-purple);
+            font-weight: 600;
+            font-size: 16px;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+        }
+
+        /* Títulos */
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 52px; font-weight: 700; color: var(--brand-purple); line-height: 1.1; }
+        h2 { font-family: 'Montserrat', sans-serif; font-size: 32px; color: var(--brand-purple); margin-bottom: 30px; border-left: 6px solid var(--brand-orange); padding-left: 20px; }
+        h3 { font-size: 20px; color: var(--brand-orange); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Contenido */
+        .content-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; flex-grow: 1; align-items: start; }
+        .full-width { grid-column: 1 / -1; }
+
+        p { font-size: 18px; color: var(--text-muted); margin-bottom: 20px; }
+        
+        ul { list-style: none; }
+        li { position: relative; padding-left: 30px; margin-bottom: 12px; font-size: 17px; }
+        li::before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: var(--brand-orange); }
+
+        /* Pasos del Proceso */
+        .step-badge {
+            background: var(--brand-purple);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: var(--light-gray);
+            border: 1px solid #e5e7eb;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .osi-badge {
+            background: #dcfce7;
+            color: #166534;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        /* Media Queries para evitar que se corte */
+        @media (max-width: 1024px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .slide { padding: 40px; min-height: auto; }
+            h1 { font-size: 38px; }
+        }
+
+        /* Decoración */
+        .slide::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at bottom right, rgba(243, 93, 0, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="presentation-wrapper">
+
+    <!-- SLIDE 1: PORTADA -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logos-container">
+                <div class="image-placeholder-logo"></div>
+                <div class="image-placeholder-logo"></div>
+            </div>
+        </div>
+        <div class="title-layout" style="text-align: center; margin-top: 80px;">
+            <h3>Ecosistema Addressable TV</h3>
+            <h1>Operativa del Ad Server<br>y Tecnología HYLDA</h1>
+            <p style="margin-top: 30px; font-size: 24px;">Manual de Operaciones y Tráfico de Campañas Directas</p>
+            
+            <div style="margin-top: 80px;">
+                <p style="font-weight: 700; color: var(--brand-purple); margin-bottom: 0; font-size: 22px;">Sergio Núñez</p>
+                <p style="font-size: 18px;">Ad Operations Specialist</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: ¿QUÉ ES HYLDA? -->
+    <div class="slide">
+        <h2>¿Qué es HYLDA? (Hybrid Linear / Digital)</h2>
+        <div class="content-grid">
+            <div>
+                <p>HYLDA es la solución de <strong>FreeWheel</strong> que actúa como puente crítico entre el inventario de televisión lineal tradicional y el entorno digital bajo demanda.</p>
+                <ul>
+                    <li><strong>Sustitución en Tiempo Real:</strong> Permite que spots específicos de la pauta lineal sean sustituidos por anuncios digitales segmentados.</li>
+                    <li><strong>Standard HbbTV:</strong> Utiliza el estándar de TV híbrida para disparar llamadas al ad server mediante <em>Stream Events</em>.</li>
+                    <li><strong>Unified Selling:</strong> Gestiona pautas de streaming y TV tradicional desde un flujo de trabajo unificado.</li>
+                </ul>
+            </div>
+            <div class="highlight-box">
+                <h3>Casos de Uso Documentados:</h3>
+                <ul>
+                    <li><strong>Schedule Mirroring:</strong> Replicar la pauta lineal exacta en streaming.</li>
+                    <li><strong>Dynamic Ad Replacement (DAR):</strong> Inserción de spots basados en data de hogar.</li>
+                    <li><strong>L-Banners / Skins:</strong> Formatos gráficos sobre el contenido lineal.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: PASO 1 - ALTA DE IO -->
+    <div class="slide">
+        <h2>Paso 1: Creación de la Orden de Inserción (IO)</h2>
+        <div class="content-grid">
+            <div>
+                <span class="step-badge">1. Setup Inicial de Campaña</span>
+                <p>El primer paso en el <em>Advertising Module Dashboard</em> de <code>mrm.freewheel.tv</code> es crear la entidad que agrupará el presupuesto y los productos.</p>
+                <ul>
+                    <li><strong>Acción:</strong> Clic en <em>New</em> > <em>Insertion Order</em>.</li>
+                    <li><strong>Primary Trafficker & Sales Person:</strong> Asignar a los responsables de operaciones y comercial para la campaña.</li>
+                    <li><strong>Advertiser Industry:</strong> Categorizar el sector del anunciante (crucial para reglas de exclusión de competencia).</li>
+                    <li><strong>Brand Assignment:</strong> Vincular la marca exacta para asegurar el reporting correcto.</li>
+                    <li><strong>Ad Products:</strong> Seleccionar los productos publicitarios (ej. Vídeo Spot, L-Banner interactivo).</li>
+                </ul>
+            </div>
+            <div>
+                <div class="image-placeholder-graphic">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                        <i class="fas fa-file-invoice" style="font-size: 40px;"></i>
+                        <span></span>
+                        <span style="font-size: 14px; color: #64748b; font-weight: normal;">(Mostrar campos: Trafficker, Sales Person, Industry, Brand)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: PASO 2 - PLACEMENT Y TARGETING -->
+    <div class="slide">
+        <h2>Paso 2: Configuración del Placement (Targeting)</h2>
+        <div class="content-grid">
+            <div>
+                <span class="step-badge">2. Segmentación de Audiencia y Entorno</span>
+                <p>El <strong>Placement</strong> es la línea de pedido donde reside el targeting. Es el núcleo de la estrategia Addressable.</p>
+                <ul>
+                    <li><strong>Content Targeting:</strong> Configurar las reglas de inclusión/exclusión para <em>Programas</em>, <em>Canales</em> o <em>Géneros</em> específicos de Atresmedia.</li>
+                    <li><strong>Endpoint Targeting:</strong> ¡Crítico para HYLDA! Filtrar para que la entrega se dirija obligatoriamente a dispositivos compatibles con <strong>HbbTV / IPTV STB</strong>.</li>
+                    <li><strong>Date & Time:</strong> Establecer fechas de inicio/fin y *Dayparts* (franjas horarias) si la campaña lo requiere.</li>
+                </ul>
+            </div>
+            <div>
+                <div class="image-placeholder-graphic">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                        <i class="fas fa-bullseye" style="font-size: 40px;"></i>
+                        <span></span>
+                        <span style="font-size: 14px; color: #64748b; font-weight: normal;">(Mostrar sección: Placement Specifications > Targeting)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: PASO 3 - DELIVERY Y PRIVACIDAD -->
+    <div class="slide">
+        <h2>Paso 3: Delivery, Frecuencia y Privacidad</h2>
+        <div class="content-grid">
+            <div>
+                <span class="step-badge">3. Control de Exposición</span>
+                <p>Dentro del mismo Placement, debemos configurar cómo y cuánto impactamos al espectador para evitar la fatiga publicitaria.</p>
+                <ul>
+                    <li><strong>Delivery (Frequency Capping):</strong> Establecer los límites. Por ejemplo, limitar a <em>3 impresiones por usuario cada 24 horas</em>.</li>
+                    <li><strong>Privacy Restrictions:</strong> Aplicar las reglas de <em>User opt-out</em> (GDPR/CCPA) asegurando que no se sirve publicidad segmentada a usuarios que han rechazado el consentimiento en su Smart TV.</li>
+                </ul>
+            </div>
+            <div>
+                <div class="image-placeholder-graphic">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                        <i class="fas fa-shield-alt" style="font-size: 40px;"></i>
+                        <span></span>
+                        <span style="font-size: 14px; color: #64748b; font-weight: normal;">(Mostrar inputs de Freq. Cap y Privacy Restrictions)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: PASO 4 - ASIGNACIÓN DE CREATIVIDADES -->
+    <div class="slide">
+        <h2>Paso 4: Asignación de Creatividades y Ad Units</h2>
+        <div class="content-grid">
+            <div>
+                <span class="step-badge">4. Carga de Materiales</span>
+                <p>Una vez creada la estructura lógica, procedemos a subir los materiales físicos y vincularlos.</p>
+                <ul>
+                    <li><strong>Subida de Assets:</strong> Cargar el vídeo o el tag interactivo (Digital Skin / L-Banner) en la biblioteca de creatividades.</li>
+                    <li><strong>Ad Unit Assignment:</strong> Vincular la creatividad recién subida a los bloques de anuncios (*Ad Units*) correspondientes dentro de nuestro Placement.</li>
+                    <li><strong>Transcodificación:</strong> Esperar a que el sistema procese el vídeo para asegurar que cumple con el estándar HbbTV de emisión (estado <em>Ready</em>).</li>
+                </ul>
+            </div>
+            <div>
+                <div class="image-placeholder-graphic">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                        <i class="fas fa-video" style="font-size: 40px;"></i>
+                        <span></span>
+                        <span style="font-size: 14px; color: #64748b; font-weight: normal;">(Mostrar pantalla de Assign Creative to Ad Units)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: PASO 5 - QA Y ACTIVACIÓN -->
+    <div class="slide">
+        <h2>Paso 5: Revisión de Widgets y Activación</h2>
+        <div class="content-grid">
+            <div>
+                <span class="step-badge">5. Set to Active</span>
+                <p>El control de calidad final antes de permitir que la campaña empiece a consumir impresiones.</p>
+                <ul>
+                    <li><strong>Reload Insertion Order:</strong> Acción obligatoria en FreeWheel para refrescar dependencias tras vincular los materiales.</li>
+                    <li><strong>Review Campaign Widgets:</strong> Navegar por la lista de campañas, seleccionar la recién creada y hacer un repaso rápido de los widgets asociados (comprobar que la industria y las creatividades no marcan error).</li>
+                    <li><strong>Activación:</strong> Cambiar el estado del Placement a <strong>Active</strong> y, finalmente, cambiar la Campaña a <strong>Active</strong>.</li>
+                </ul>
+            </div>
+            <div>
+                <div class="image-placeholder-graphic">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                        <i class="fas fa-power-off" style="font-size: 40px;"></i>
+                        <span></span>
+                        <span style="font-size: 14px; color: #64748b; font-weight: normal;">(Mostrar el botón de cambio de status de Pending a Active)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: EL ALGORITMO DE PACING (OSI) -->
+    <div class="slide">
+        <h2>Gestión de Entrega: El Pacing y el OSI</h2>
+        <div class="content-grid">
+            <div>
+                <p>Una vez activa, el ad server utiliza el indicador <span class="osi-badge">On_Scheduled_Indicator</span> para una entrega fluida (*Smooth Pacing*).</p>
+                <ul>
+                    <li><strong>Cálculo del OSI:</strong> Se basa en el <em>Delivery Budget</em> (presupuesto de entrega) versus la cantidad que debería haberse entregado en ese momento preciso del tiempo.</li>
+                    <li><strong>Objetivo del Sistema:</strong> El ad server intentará ceñirse siempre al <strong>100% del OSI</strong>.</li>
+                    <li><strong>Excepciones Técnicas:</strong> Según la documentación de FW, el cálculo <em>no</em> tiene en cuenta las restricciones de <em>Daypart</em> (franjas horarias), por lo que el ritmo puede oscilar si el inventario de la franja se agota.</li>
+                </ul>
+            </div>
+            <div class="highlight-box" style="border-left: 5px solid #166534; background: #f0fdf4;">
+                <p><strong>Tip de Optimización (Troubleshooting):</strong> Si el OSI está por debajo del 90% (<em>Under-delivering</em>), revisa si el *Endpoint Targeting* es demasiado restrictivo o si las creatividades han fallado en la transcodificación.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
